@@ -1,0 +1,21 @@
+info für git flow:
+-branches nur auf Basis der develop branch erstellen
+also:
+git checkout/switch develop
+git branch -c <feature> (creates branch and switches to it)
+
+-fertige features -> pull request in github:
+base: develop; compare: <branchname>
+
+final releases werden von develop in main gemergt und mit tags versehen
+
+
+WORKFLOW: (cmd)/ graphfische anleitung empfohlen (youtube!) NICHT DIESE HIER
+etwas programmieren
+stagen:
+-git add . (addiert alles zur staging area)
+commit:
+-git commit -m"...."
+push:
+-git push
+dann normal auf github pull request
