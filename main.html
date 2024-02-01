@@ -1,16 +1,24 @@
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-    <canvas id = "canvas1" width="1000" height ="1000"></canvas>
-    <script>
-        var c=document.getElementById("canvas1");
-var ctx = c.getContex("2d");
-
-//test
-ctx.fillStyle="#000000";
-ctx.fillRect(100,100,100,100);
-console.log("tetddztd65")
+    <head>
+        <!-- Create title for tab-->
+        <title>Freedking</title>
+    </head>
+<body>
+<!--adjusted for ipad (6th gen)-->
+<canvas id="canvas1" width="1000" height="600"></canvas>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+<script src="main.js"></script>
+<script>
+    const ctx = document.getElementById("canvas1").getContext("2d");
+    //draw red rectangle
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0,0,150,75);
     </script>
-</body>
-
+    
+    </body>
 </html>

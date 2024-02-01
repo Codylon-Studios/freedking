@@ -1,4 +1,4 @@
-info für git flow:
+ALLGEMEINE INFO FÜR GIT FLOW (UNSER SYSTEM)
 -branches nur auf Basis der develop branch erstellen
 also:
 git checkout/switch develop
@@ -10,12 +10,23 @@ base: develop; compare: <branchname>
 final releases werden von develop in main gemergt und mit tags versehen
 
 
-WORKFLOW: (cmd)/ graphfische anleitung empfohlen (youtube!) NICHT DIESE HIER
+WORKFLOW:(mit cmd option)
+Neuer branch auf Basis der develop branch erstellen:
+git branch -c <branchname>
+Dann auf git pushen:
+git push origin <branchname>
+Im git graph sollte neben eurem branch ein label mit origin erschienen sein
+(Graphischer Pfad ohne cmd: rechtsklick auf den commit auf den develop zeigt-> create branch
+dann zum pushen nochmal rechtsklick -> push branch; jetzt solte auch origin auftauchen)
+Der aktuelle Branch ist der der fett gekennzeichnet ist; wenn nicht (zur Sicherheit)
+Am Anfang git checkout <branchname> ausführen
+
 etwas programmieren
-stagen:
--git add . (addiert alles zur staging area)
-commit:
--git commit -m"...."
-push:
--git push
-dann normal auf github pull request
+git add .
+git commit (dann taucht eine Datei name commit_msg auf; euren commit reinschreiben und datei schließen)
+git push origin <branchname> (akutalisiert mit Änderungen auf github)
+
+(grafisch:)
+Links auf reiter "Quellcodeverwaltung/source code control" gehen 
+auf das plus drücken (stagen)
+commitmsg eingeben; grünen button zweimal drücken(commit und push)
