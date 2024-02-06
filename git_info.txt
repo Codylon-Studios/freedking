@@ -8,7 +8,7 @@ git branch -c <feature> (creates branch and switches to it)
 base: develop; compare: <branchname>
 
 final releases werden von develop in main gemergt und mit tags versehen
-
+JEDES Mal fetchen! !!!
 
 WORKFLOW:(mit cmd option)
 Neuer branch auf Basis der develop branch erstellen:
