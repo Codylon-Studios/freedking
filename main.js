@@ -1,10 +1,7 @@
 //
 //extensions
 //
-const ctx = document.getElementById("canvas1").getContext("2d");
-//draw red rectangle
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(0,0,150,75);
+
 
 //
 //variablen konfigurieren
@@ -20,7 +17,10 @@ var numlaufer = 0;
 var numturm = 0;
 var numdame = 0;
 
-
+var maxspringer = 0;
+var maxlaufer = 0;
+var maxturm = 0;
+var maxdame = 0;
 
 //
 //funktionen
@@ -34,8 +34,16 @@ function generator(b){
     numdame = 0;
     numturm = 0;
 
+    //maximale anzahl konfigurieren
+    maxspringer = Math.floor((b*b)/3)
+    maxlaufer = maxspringer
+    maxdame = Math.floor((b*b)/9)
+    maxturm = (b*b)- maxspringer - maxlaufer - maxdame - 2
+
     for(var i=0; i<=b*b-1; i++){
-        while(1>0){
+        console.log("a")
+        var j = 0
+        while(j<100){
             var random = Math.floor(Math.random() * 4);
             if(i == b-1){
                 field.push(0)
@@ -46,33 +54,34 @@ function generator(b){
                 break
             }
             if(random==0){
-                if(numspringer<Math.floor(((b*b)-2)/3)){
+                if(numspringer<=maxspringer){
                     field.push(1)
-                    numspringer += 1
+                    numspringer = numspringer + 1
                     break
                 }
             }
             if(random==1){
-                if(numlaufer<Math.floor(((b*b)-2)/3)){
+                if(numlaufer<=maxlaufer){
                     field.push(2)
-                    numlaufer += 1
+                    numlaufer = numlaufer + 1
                     break
                 }
             }
             if(random==3){
-                if(numdame<Math.floor(((b*b)-2)/9)){
+                if(numdame<=maxdame){
                     field.push(4)
-                    numdame += 1
+                    numdame = numdame + 1
                     break
                 }
             }
             if(random==2){
-                if(numturm<(b*b-2)- Math.floor((((b*b)-2)/3)*2) - Math.floor(((b*b)-2)/9)){
+                if(numturm<=maxturm){
                     field.push(3)
-                    numturm +=1
+                    numturm = numturm + 1
                     break
                 }
             }
+            j = j +1
         }
     }
     return field
@@ -80,8 +89,7 @@ function generator(b){
 
 
 
-
 //
 //main
 //
-console.log(generator(4));
+console.log(generator(8));
